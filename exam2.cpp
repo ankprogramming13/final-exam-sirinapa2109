@@ -17,105 +17,43 @@ int main() {
             cout << "2. List student." << endl;
             cout << "3. Search list student" << endl;
             cout << "4. Quit." << endl;
-            cout << "Please enter menu : " ;
+            cout << "Please enter menu : ";
             cin >> cmd;
-#include <iostream>
-#include <fstream>
-#include <string>
-using namespace std;
+            if(cmd==1){
+            cout<<"Enter Std name : ";
+            cin>>name;
 
-int main() {
-        /* code */
-        int cmd;
-        string name;
-        string line;
-        ofstream writefile;
-        ifstream readfile;
+            writefile.open("std.txt",fstream::app);
+            if(writefile.is_open()){
+               writefile<<name<<endl;
+            }else{
 
-        do{
-            cout << "MENU" << endl;
-            cout << "1. Add student." << endl;
-            cout << "2. List student." << endl;
-            cout << "3. Search list student" << endl;
-            cout << "4. Quit." << endl;
-            cout << "Please enter menu : " ;
-            cin >> cmd;
+            cout<<"unable to open file";
+            }
 
-            if (cmd == 1){
-                cout << "Enter Std name : " ;
-                cin >> name;
-
-                writefile.open("std.txt",fstream::app);
-                if (writefile.is_open()) {
-                    writefile << name << endl;
-                } else {
-                    cout << "unable to open file";
+            }else if(cmd==2){
+            readfile.open("std.txt");
+            if(readfile.is_open()){
+            while(getline(readfile,line)){
+                    cout<<line<<endl;
                 }
-            }   else if (cmd == 2){
-                readfile.open ("std.txt");
-                if (readfile.is_open()) {
-                    while (getline (readfile,line)){
-                        cout << line << endl;}
+            }else if(cmd==3){
+                cout<<"Enter name :";
+                cin>>name;
+
+                readfile.open("std.txt");
+                if(readfile.is_open()){
+                  (name="&name&",name);
+                  while(getline(readfile,name)){
+                    cout<<name<<endl;
+                  }
                 }
             }
-                 else if (cmd == 3){
-                 cout << "Enter name : ";
-                 cin >> name;
-
-                readfile.open ("std.txt");
-                if (readfile.is_open()) {
-                (name = "&name&",name);
-                    while (getline (readfile,name)){
-                        cout << name << endl;
-                    }
-                }
-            } else {
+            }else{
                 break;}
 
-        }while (myfile.close);
+            }while("myfile.close");
 
-
-        return 0;
-}
-
-
-            if (cmd == 1){
-                cout << "Enter Std name : " ;
-                cin >> name;
-
-                writefile.open("std.txt",fstream::app);
-                if (writefile.is_open()) {
-                    writefile << name << endl;
-                } else {
-                    cout << "unable to open file";
-                }
-            }   else if (cmd == 2){
-                readfile.open ("std.txt");
-                if (readfile.is_open()) {
-                    while (getline (readfile,line)){
-                        cout << line << endl;}
-                }
-            }
-                 else if (cmd == 3){
-                 cout << "Enter name : ";
-                 cin >> name;
-
-                readfile.open ("std.txt");
-                if (readfile.is_open()) {
-                (name = "&name&",name);
-                    while (getline (readfile,name)){
-                        cout << name << endl;
-                    }
-                }
-            } else {
-                break;}
-
-        }while (myfile.close);
-
-
-        return 0;
-}
-int main() {
 
         return 0;
 }
