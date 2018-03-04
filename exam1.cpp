@@ -1,28 +1,37 @@
 #include <iostream>
+
 using namespace std;
+float add(float a,float b) {
+    return a+b;
+}
+float sub(float a, float b) {
+    return a-b;
+}
+
+float mul(float a, float b) {
+    return a*b;
+}
+
+float div(float a, float b) {
+    return a/b;
+}
 int main() {
-        int a,b,cmd,reusult_1,reusult_2,reusult_3,reusult_4;
-        cout<<"welcome to CLI Calculator V1.00"<<endl;
-        cout<<"number 1 : ";
-        cout<<a;
-        cout<<"number 2 : ";
-        cin <<b;
-        do {
-                cout<<"menu\n1.+\n2.-\n3.*\n4./\n5.quit"<<endl;
-        cin<<cmd;
-        if(cmd==1){
-                reusult_1=a+b;
-                cout<<"Result = "<<result_1<<endl;
-        }else if (cmd==2){
-                reusult_1=a-b;
-                cout<<"Result = "<<result_2<<endl;
-        }else if (cmd==3){
-                 reusult_1=a*b;
-                cout<<"Result = "<<result_3<<endl;
-        }else if (cmd==4){
-                reusult_1=a/b;
-                cout<<"Result = "<<result_4<<endl;
-        }(break;)
-    }while (1);
+        float a = 0, b = 0, result = 0;
+        int cmd;
+        cout << "welcome to CLI Calculator V1.00" << endl;
+        cout << "number 1 : ";
+        cin >> a;
+        cout << "number 2 : ";
+        cin >> b;
+        cout << "1. +\n2. -\n3. *\n4. /\n5. quit" << endl;
+        cin >> cmd;
+        switch (cmd) {
+        case 1 : cout << "Result = " << add(a,b) << endl; break;
+        case 2 : cout << "Result = " << sub(a,b) << endl; break;
+        case 3 : cout << "Result = " << mul(a,b) << endl; break;
+        case 4 : cout << "Result = " << div(a,b) << endl; break;
+        case 5 : break;
+        }
+
     return 0;
     }
